@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.psobrinho.spotifyclone.Detalhes
 import com.psobrinho.spotifyclone.Model.*
 import com.psobrinho.spotifyclone.R
 import com.psobrinho.spotifyclone.databinding.AlbumItemBinding
@@ -113,10 +114,10 @@ class Home : Fragment() {
         fun bind(categoria: Categoria) {
             text_titulo.text = categoria.titulo
             recycler_albuns.adapter = AlbunsAdapter(categoria.albuns) { album ->
-                //val intent = Intent(context, Detalhes::class.java)
-                //intent.putExtra("album", album.album)
-               // intent.putExtra("titulos", titulos[album.id])
-               // startActivity(intent)
+                val intent = Intent(context, Detalhes::class.java)
+                intent.putExtra("album", album.album)
+                intent.putExtra("titulos", titulos[album.id])
+                startActivity(intent)
             }
             recycler_albuns.layoutManager =
                 LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
@@ -130,8 +131,7 @@ class Home : Fragment() {
 
         private lateinit var binding: AlbumItemBinding
 
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AlbunsHolder =
-            AlbunsHolder(
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AlbunsHolder = AlbunsHolder(
 
                 binding = AlbumItemBinding.inflate(LayoutInflater.from(parent.context), parent, false),
                 onClick = listener
@@ -156,7 +156,7 @@ class Home : Fragment() {
             Picasso.get().load(album.album).placeholder(R.drawable.placeholder).fit()
                 .into(image_album)
             image_album.setOnClickListener {
-                onClick?.invoke(album)
+                onClick?.invoke(album)  //invoke - passar a posicção de cada album
             }
         }
 

@@ -2,4 +2,21 @@
     <string name="app_name">Spotify Clone</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Fragment Playlist -->
+    <string name="playlist_text_grande">Crie sua primeira playlist.</string>
+    <string name="playlist_text_pequeno">É fácil, vamos te ajudar!</string>
+    <string name="playlist_bt_criar">Criar Playlist</string>
+
+    <!-- Fragment Artistas -->
+    <string name="artistastext_grande">Seus artistas aparecerão aqui</string>
+    <string name="artistastext_pequeno">Agora você pode adicionar alguns dos seus artistas favoritos</string>
+    <string name="artistas_bt_add">Adicionar Artist...</string>
+
+    <!-- Fragment Albuns -->
+    <string name="albuns_text_grande">Seus álbuns aparecerão aqui</string>
+
+    <!-- Fragment DetalhesAlbuns -->
+    <string name="detalhes_albuns_text">As 50 mais tocadas no Brasil</string>
+    <string name="detalhes_albuns_bt">PLAY</string>
 </resources>
